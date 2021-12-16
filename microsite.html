@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Titi</title>
+<style type="text/css">
+*{
+margin: 0;
+padding: 0;
+font-family: "Roboto";
+font-size: 20px;
+font-weight: 100;
+color: white;
+}
+html, body{
+width: 100%;
+height: 100%;
+}
+.slideshow{
+position: relative;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+.slide{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: url("https://images.pexels.com/photos/5642083/pexels-photo-5642083.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+transition: 0.5s ease;
+z-index: 2
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+}
+.slide p{
+font-family: "Roboto";
+color: white;
+font-size: 55px;
+font-weight: 200;
+border-bottom: 2px solid white;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+.slide:nth-child(2){
+width: 0%;
+background: url("https://images.pexels.com/photos/9758859/pexels-photo-9758859.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+z-index: 3;
+}
+.slide:nth-child(3){
+width: 0%;
+background: url("https://images.pexels.com/photos/9709336/pexels-photo-9709336.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+z-index: 4;
+}
+.slide:nth-child(4){
+width: 0%;
+background: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg");
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+z-index: 5;
+}
+/*CANVAS*/
+.slideshow canvas{
+position: absolute;
+top: 0;
+left: 0;
+background: rgba(20,20,20,0.3);
+z-index: 99;
+}
+footer{
+width: 100%;
+height: 40%;
+background: rgb(30,30,30);
+}
+footer .contacts{
+width: 100%;
+height: 50%;
+}
+footer .contacts p{
+padding: 10px;
+position: relative;
+top: 35%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 80%;
+height: auto;
+font-family: "Roboto";
+font-size: 20px;
+font-weight: 100;
+color: white;
+text-align: center;
+}
+footer .icons{
+width: 100%;
+height: 50%;
+/*background: rgb(40,40,40);*/
+display: flex;
+justify-content: center;
+align-items: center;
+}
+footer .icons svg{
+margin: 10px;
+transition: 0.3s ease;
+}
+footer .icons svg path{
+transition: 0.3s ease;
+}
+footer .icons svg:nth-child(1):hover path{
+fill: #4267B2;
+}
+footer .icons svg:nth-child(2):hover path{
+fill: #C13584;
+}
+.content{
+position: relative;
+width: 100%;
+height: 100%;
+background: rgb(20,20,20);
+}
+.content p{
+padding: 30px;
+font-size: 30px;
+text-decoration: underline solid white 1px;
+text-underline-offset: 17px;
+}
+.content .card_con{
+display: flex;
+}
+.content .card_con .card{
+width: 100px;
+height: 100px;
+}
+</style>
+</head>
+<body>
+<div class="slideshow">
+	<div class="slide"><p>1</p></div>
+	<div class="slide"><p>2</p></div>
+	<div class="slide"><p>3</p></div>
+	<div class="slide"><p>4</p></div>
+	<canvas id="canvas"></canvas>
+</div>
+
+<div class="content">
+	<p>1.Header</p>
+	<div class="card_con">
+		<div class="card">
+	
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="contacts">
+		<p>+420 690 096 123</p>
+		<p>example@email.com</p>
+	</div>
+	<div class="icons">
+		<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+		width="70" height="70"
+		viewBox="0 0 50 50"
+		style=" fill:#fff;">
+			<path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z">
+			</path>
+		</svg>
+		<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+		width="70" height="70"
+		viewBox="0 0 50 50"
+		style=" fill:#fff;">
+			<path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z">
+			</path>
+		</svg>
+	</div>
+</footer>
+<script type="text/javascript">
+
+var canvas = document.getElementById("canvas");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+var c = canvas.getContext("2d");
+
+//CANVAS
+var balls = [];
+
+window.addEventListener("resize", (e)=>{
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+balls=[];
+for(var i = 0; i < 200; i++){
+balls.push(new Ball());
+}
+
+});
+
+class Ball{
+constructor(){
+this.x = Math.random()*canvas.width;
+this.y = Math.random()*canvas.height;
+this.r = Math.random()*4.5;
+this.s = Math.random()*1.5;
+}
+draw(){
+c.beginPath();
+c.fillStyle = "rgb(200,200,200)";
+c.arc(this.x,this.y,this.r,0,Math.PI*2);
+c.fill();
+c.closePath();
+
+this.y+=this.s;
+if(this.y > canvas.height){
+this.x = Math.random()*canvas.width;
+this.r = Math.random()*4.5;
+this.s = Math.random()*1.5;
+this.y = -this.r;
+}
+}
+}
+
+for(var i = 0; i < 200; i++){
+balls.push(new Ball());
+}
+
+function ani(){
+requestAnimationFrame(ani);
+c.fillRect(0,0,100,100);
+c.clearRect(0,0,canvas.width, canvas.height);
+for(var i = 0; i < balls.length; i++){
+balls[i].draw();
+}
+}
+
+//slideshow
+var slides = document.getElementsByClassName("slide");
+var l = slides.length;
+var a = 0;
+var up = true;
+
+function show(){
+if(up){a++;}else{a--;}
+if(a > (l-1) || a <= 0){
+up = !up;
+if(up){a++;}else{a--;}
+}
+if(up){
+slides[a].style.width = "100%";
+}else{
+slides[a].style.width = "0%";
+}
+setTimeout(show, 1500);
+}
+show();
+ani();
+</script>
+</body>
+</html>
